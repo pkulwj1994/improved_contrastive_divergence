@@ -587,6 +587,7 @@ def train(models, models_ema, optimizer, logger, dataloader, resume_iter, logdir
 
                     log_image(
                         new_im, logger, 'train_gen_{}'.format(itr), step=i)
+                    plt.imsave(osp.join(logdir, "gen_img_{}.png".format(itr)),np.squeeze(new_im/255))
 
 
                 if rank_idx == 0:
